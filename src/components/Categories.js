@@ -1,4 +1,5 @@
 import fishpic from '../assets/placeholder.png';
+{/*Sekcja z kategoriami*/}
 function Categories() {
   return (
     <section className="categories">

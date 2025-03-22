@@ -1,4 +1,5 @@
 function Footer() {
+  {/*Sekcja footer*/}
   return (
     <footer>
       <div className="footer-content">

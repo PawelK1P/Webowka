@@ -1,5 +1,5 @@
 import fishpic from '../assets/placeholder.png';
-
+{/*sekcja z placeholderem i guzikiem */}
 function Main() {
   return (
     <section className="main">
