@@ -1,6 +1,4 @@
-Witamy na stronie sklepu wędkarskiego **"Świat Wędkarza"**.
-<br>Strona będzie zawierać:
-
+Notatnik:
 <br>React Router: 
 npm install history
 npm install react-router react-router-dom
