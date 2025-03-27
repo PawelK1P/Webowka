@@ -1,5 +1,5 @@
 import icon from '../assets/ikona.png';
-{/*Sekcja nagłówek*/}
+import { Link } from 'react-router-dom'; // import komponentu Link (służy do obsługi routingu, dzięki któremu można się przenosić między stronami)
 function Navbar() {
   return (
     <header>
@@ -24,11 +24,11 @@ function Navbar() {
           <a href="#">Pomoc</a>
           <a href="#">Kontakt </a>
           <a href="#">Koszyk </a>
-          <a href="#">Konto</a>
+          <Link to="/account">Konto</Link> {/*Link to jest używane jako "załącznik", odsyła do Account.js*/}
         </nav>
       </div>
     {/*Nawigacja kategorii*/}
-      <nav className="categories-nav">
+    <nav className="categories-nav">
         <ul>
           {/*lista kategorii*/}
           {categories.map((category) => ( 
