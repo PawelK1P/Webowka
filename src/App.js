@@ -2,11 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom'; // obsługa przejść między stronami
 import "./styles.css";
 // importy elementów strony
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Main from "./components/Main";
-import Categories from "./components/Categories";
-import Account from "./components/Account";
+  import Navbar from "./components/Navbar";
+  import Footer from "./components/Footer";
+  import Main from "./components/Main";
+  import Categories from "./components/Categories";
+  import Account from "./components/Account";
 
 function App() {
   const location = useLocation(); // Służy do uzyskania aktualnej lokalizacji
