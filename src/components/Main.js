@@ -1,4 +1,5 @@
 import fishpic from '../assets/placeholder.png';
+import { Link } from 'react-router-dom';
 {/*sekcja z placeholderem i guzikiem */}
 function Main() {
   return (
@@ -7,9 +8,9 @@ function Main() {
       <div className="main-content">
         <h1>Świat Wędkarza</h1>
         <p>Z nami złowisz dużą rybę</p>
-        <a href="#" className="prod">
+        <Link to="/ProductPage" className="prod">
           Zobacz produkty
-        </a>
+        </Link>
       </div>
     </section>
   )
