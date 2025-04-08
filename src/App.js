@@ -6,24 +6,26 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Main from "./components/Main";
 import Categories from "./components/Categories";
-import Account from "./components/Account";
+import Registration from "./components/Registration";
 import ProductPage from "./components/ProductPage";
+import Login from "./components/Login";
 
 function App() {
   const location = useLocation(); // Służy do uzyskania aktualnej lokalizacji
   return (
     <div className="app">
-      {location.pathname !== "/account" && <Navbar />} {/* Renderuje Navbar tylko jeśli nie znajdujesz się na stronie Account */}
+      {location.pathname !== "/Registration" && location.pathname!=="/Login" && <Navbar />} {/* Renderuje Navbar tylko jeśli nie znajdujesz się na stronie Registration */}
       <main>
         <Routes>
-          <Route path="/account" element={<Account />} /> {/*obsługa przejścia do Account*/}
+          <Route path="/Registration" element={<Registration />} /> {/*obsługa przejścia do Registration*/}
           <Route path="/" element={<Main />} /> {/* Główna strona */}
+          <Route path="/Login" element={<Login />} /> {/* Login */}
           {/* Można dodać inne przejścia tutaj */}
           <Route path="/ProductPage" element={<ProductPage />} />
         </Routes>
-        {location.pathname !== "/account" && location.pathname !== "/ProductPage" && <Categories />} {/* Renderuj Categories tylko jeśli nie znajdujesz się na stronie Account */}
+        {location.pathname !== "/Registration" && location.pathname !== "/ProductPage" && <Categories />} {/* Renderuj Categories tylko jeśli nie znajdujesz się na stronie Registration */}
       </main>
-      {location.pathname !== "/account" && location.pathname !== "/ProductPage" &&  <Footer />} {/* Renderuj Footer tylko jeśli nie znajdujesz się na stronie Account */}
+      {location.pathname !== "/Registration" && location.pathname !== "/ProductPage" &&  <Footer />} {/* Renderuj Footer tylko jeśli nie znajdujesz się na stronie Registration */}
     </div>
   );
 }

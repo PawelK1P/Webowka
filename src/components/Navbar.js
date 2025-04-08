@@ -1,11 +1,24 @@
+import React, { useState } from 'react';
 import icon from '../assets/ikona.png';
 import { Link } from 'react-router-dom'; // import komponentu Link (służy do obsługi routingu, dzięki któremu można się przenosić między stronami)
 function Navbar() {
+  const [showOptions, setShowOptions] = useState(false); // Stan do zarządzania widocznością opcji
+
+  const handleMouseEnter = () => {
+    setShowOptions(true);
+  };
+
+  const handleMouseLeave = () => {
+    setShowOptions(false);
+  };
+
+
   return (
     <header>
       {/*Pierwszy pasek*/}
       <div className="top-bar">
         {/*Logo sklepu*/}
+        <Link to="/">
         <div className="logo">
           <span><img src={icon} alt="Fish icon"/></span>
           <div>
@@ -13,6 +26,7 @@ function Navbar() {
             <p>Z nami złowisz dużą rybę</p>
           </div>
         </div>
+        </Link>
       {/*Wyszukiwarka*/}
         <div className="search">
           <input type="text" placeholder="Wpisz czego szukasz" />
@@ -24,7 +38,16 @@ function Navbar() {
           <a href="#">Pomoc</a>
           <a href="#">Kontakt </a>
           <a href="#">Koszyk </a>
-          <Link to="/account">Konto</Link> {/*Link to jest używane jako "załącznik", odsyła do Account.js*/}
+
+
+          {/* Konto z rozwijanym menu */}
+          <div 
+            onMouseEnter={handleMouseEnter} 
+            onMouseLeave={handleMouseLeave}
+            style={{ position: 'relative' }} // Umożliwia pozycjonowanie selecta
+          >
+            <Link to="/Registration">Konto</Link>
+          </div>
         </nav>
       </div>
     {/*Nawigacja kategorii*/}

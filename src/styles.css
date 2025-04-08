@@ -30,6 +30,7 @@ ul {
   border-radius: 4px;
   font-weight: 500;
   transition: background-color 0.2s;
+  color:white;
 }
 /*Przyciski/linki już odwiedzone*/
 .prod:hover {
@@ -256,5 +257,66 @@ footer {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
+}
+
+/*sekcja rejestracji*/
+.registration{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%; 
+  padding: 40px 5vw;
+  background-color: #1f1e1e;
+  color: white;
+  font-size: 25px;
+  gap: 40px;
+  box-sizing: border-box;
+}
+.text{
+  font-size:20px;
+  border-radius: 5px;
+  height:40px;
+  width:35%;
+}
+input[type='submit']{
+  background-color: #0078cc;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  color:white;
+  font-size: 40px;
+
+}
+
+.login{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.registration-form {
+  flex: 2;
+  text-align: left;
+}
+.login a {
+  display: block;
+  background-color: #0078cc;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.login a:hover {
+  background-color: #0069b4;
+}
+
+select{
+  font-size:25px;
 }
 
