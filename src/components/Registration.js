@@ -3,6 +3,9 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import "../styles.css";
 import { Link } from 'react-router-dom';
+import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
+import "../firebase.js";
+import { app } from '../firebase';
 
 function Registration() {
   // zapis formularza w komponencie
@@ -12,6 +15,9 @@ function Registration() {
     role: "client",
     loading: false //ustawienie wartości początkowej dla paska ładowania
   });
+
+  // autoryzacja domeny
+  const auth = getAuth(app);
 
   // Obsługa zmiany wartości w formularzu:
   const handleChange = (e) => { 
@@ -29,6 +35,16 @@ function Registration() {
       ...prevState,
       loading: true,
     })); // pokazanie paska ładowania
+
+    // próba stworzenia konta i dodania jej do firebase
+    try
+    {
+        createUserWithEmailAndPassword(auth, formData.email, formData.password);
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
 
     // Symulacja opóźnienia 
     setTimeout(() => {
@@ -54,7 +70,8 @@ function Registration() {
           <p>E-mail</p>
           <input 
             type="email" className='text'
-            name="email" 
+            name="email"
+            id="email" 
             value={formData.email} 
             onChange={handleChange} 
             required 
@@ -63,7 +80,8 @@ function Registration() {
           <p>Hasło</p>
           <input 
             type="password" className='text'
-            name="password" 
+            name="password"
+            id="password" 
             value={formData.password} 
             onChange={handleChange} 
             required
@@ -82,7 +100,8 @@ function Registration() {
           
           <br /><br />
           <input 
-            type="submit" 
+            type="submit"
+            id="submit" 
             value="Zarejestruj się" 
             disabled={formData.loading}
           />
