@@ -9,6 +9,7 @@ import Categories from "./components/Categories";
 import Registration from "./components/Registration";
 import ProductPage from "./components/ProductPage";
 import Login from "./components/Login";
+import SingleProductPage from './components/SingleProductPage';
 
 function App() {
   const location = useLocation(); // Służy do uzyskania aktualnej lokalizacji
@@ -22,8 +23,9 @@ function App() {
           <Route path="/Login" element={<Login />} /> {/* Login */}
           {/* Można dodać inne przejścia tutaj */}
           <Route path="/ProductPage" element={<ProductPage />} />
+            <Route path="/SingleProductPage" element={<SingleProductPage/>} />
         </Routes>
-        {location.pathname !== "/Registration" && location.pathname !== "/ProductPage" && <Categories />} {/* Renderuj Categories tylko jeśli nie znajdujesz się na stronie Registration */}
+        {location.pathname !== "/Registration" && location.pathname !== "/ProductPage" && location.pathname !== "/SingleProductPage" && <Categories />} {/* Renderuj Categories tylko jeśli nie znajdujesz się na stronie Registration */}
       </main>
       {location.pathname !== "/Registration" && location.pathname !== "/ProductPage" &&  <Footer />} {/* Renderuj Footer tylko jeśli nie znajdujesz się na stronie Registration */}
     </div>
