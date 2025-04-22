@@ -10,3 +10,10 @@ npm run build <br>
 npx firebase init <br>
 https://www.freecodecamp.org/news/how-to-deploy-a-react-app-with-firebase/ <br>
 <br> Figma: https://www.figma.com/design/Sx23tYfDAe2cY1Q5U7eZri/%C5%9Awiat-W%C4%99dkarza?node-id=0-1&t=BgaLxFa1kyUf13ll-1
+
+<h1>Opis brancha</h1>
+<ul>
+<li>Uporządkowanie projektu</li>
+<li>Dodanie strony logowania i rejestracji (współpracuje z bazą Firebase)</li>
+<li>Do ukończenia systemu brakuje pobranie stanu użytkownika i strony z wyświetlaniem informacji na temat zalogowanego użytkownika</li>
+</ul>
