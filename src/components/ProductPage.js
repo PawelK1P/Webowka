@@ -11,7 +11,6 @@ import { useCart } from "./CartContext"
     const [products, setProducts] = useState([]);
     const { addToCart } = useCart()
     const [filteredProducts, setFilteredProducts] = useState([])
-
     const [selectedBrands, setSelectedBrands] = useState([])
     const [selectedCategories, setSelectedCategories] = useState([])
     const [minPrice, setMinPrice] = useState("")
@@ -32,13 +31,13 @@ import { useCart } from "./CartContext"
 
         fetchData();
     }, []);
-
+ //dodanie produktu do koszyka 
     const handleAddToCart = (product, event) => {
         event.preventDefault() 
         addToCart(product)
         alert(`${product.Name} został dodany do koszyka`)
       }
-
+ //zmiana filtru marek
   const handleBrandChange = (e) => {
     const brand = e.target.value
     if (e.target.checked) {
@@ -47,7 +46,7 @@ import { useCart } from "./CartContext"
       setSelectedBrands(selectedBrands.filter((b) => b !== brand))
     }
   }
-
+ //zmiana filtru kategorii
   const handleCategoryChange = (e) => {
     const category = e.target.value
     if (e.target.checked) {
@@ -56,7 +55,7 @@ import { useCart } from "./CartContext"
       setSelectedCategories(selectedCategories.filter((c) => c !== category))
     }
   }
-
+//funkcja filtrująca według marki, kategorii i ceny
   const applyFilters = () => {
     let filtered = [...products]
 
@@ -103,12 +102,12 @@ import { useCart } from "./CartContext"
 
             <div className="Filter">
             <h3>Cena</h3>
-                <div className="Price-input">
+                <div className="Price">
                 <label>Min (zł) </label>
                 <input type="number" value={minPrice} onChange={(e) => setMinPrice(e.target.value)} />
                 </div>
 
-                <div className="Price-input">
+                <div className="Price">
                 <label>Maks (zł) </label>
                 <input type="number" value={maxPrice} onChange={(e) => setMaxPrice(e.target.value)} />
                 </div>
@@ -136,7 +135,6 @@ import { useCart } from "./CartContext"
             {filteredProducts.map((product) => (
                 
                 <div className="product-card" key={product.id}>
-                <Link to="/SingleProductPage">
                 <div className="product-image">
                     <img src={product.image} alt={product.Name} />
                 </div>
@@ -146,7 +144,6 @@ import { useCart } from "./CartContext"
                     <p className="product-name">{product.Name}</p>
                     <div className="product-price">{product.price.toFixed(2)} zł</div>
                 </div>
-                </Link>
                 <div className="Cart">
                     <button className="button" onClick={(e) => handleAddToCart(product, e)}>Dodaj do koszyka</button>
                 </div>

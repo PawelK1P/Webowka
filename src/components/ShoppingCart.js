@@ -26,7 +26,7 @@ function ShoppingCart() {
           {cartItems.map((item) => (
             <div className="item" key={item.id}>
               <div className="image">
-                <img src={item.image || "/placeholder.svg"} alt={item.Name} />
+                <img src={item.image} alt={item.Name} />
               </div>
 
               <div className="details">
